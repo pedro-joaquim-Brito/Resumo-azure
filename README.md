@@ -1,2 +1,2 @@
 # Resumo-azure
-Resumo dos aprendizados, sobre nuvem
+Aprendi sobre os diferentes tipos de nuvens (Privada,Pública,Híbrida e Comunitária), e sobre o ambiente do Azure
