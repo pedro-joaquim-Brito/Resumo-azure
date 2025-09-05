@@ -1,0 +1,75 @@
+Passo 1 – Acessar o Portal
+
+Entrei no portal.azure.com
+ e no menu lateral cliquei em “Criar um recurso”.
+Na busca digitei “Banco de Dados SQL” (poderia ser MySQL, PostgreSQL ou MariaDB também, mas aqui usei SQL Server como exemplo).
+
+Cliquei em “Banco de Dados SQL” → Criar.
+
+Passo 2 – Configuração Básica
+
+Na primeira aba, preenchi os dados principais:
+
+Assinatura: selecionei a minha assinatura ativa.
+
+Grupo de recursos: criei um novo chamado RG-Banco-Teste.
+
+Nome do banco de dados: escrevi DB-Teste.
+
+Servidor: como eu não tinha um servidor SQL criado, cliquei em “Criar novo servidor”.
+
+No servidor novo configurei:
+
+Nome do servidor: servidor-sql-teste.
+
+Usuário administrador: adminsql.
+
+Senha: defini uma senha forte.
+
+Região: a mesma que escolhi para os recursos (East US).
+
+Passo 3 – Selecionar Camada de Desempenho
+
+Na parte de Computação + Armazenamento, escolhi:
+
+Modelo: “Uso Geral – VCore”.
+
+Configuração: 2 vCores, 32 GB de armazenamento (valor de exemplo).
+
+O Azure mostra estimativas de custo, então ajustei para ficar dentro do orçamento.
+
+Passo 4 – Rede
+
+Na aba Rede, configurei o acesso:
+
+Marquei “Permitir acesso aos serviços do Azure”.
+
+Configurei uma regra de firewall para liberar meu IP local, assim consigo me conectar ao banco de fora.
+
+Passo 5 – Segurança
+
+Na aba de segurança, habilitei o Azure Defender for SQL (opcional, recomendado em produção).
+Também deixei habilitado o backup georredundante padrão.
+
+Passo 6 – Revisão e Criação
+
+Cliquei em “Revisar + Criar”.
+O Azure fez a validação e mostrou um resumo.
+Confirmei em “Criar” e aguardei alguns minutos até a instância ser provisionada.
+
+Passo 7 – Conexão ao Banco
+
+Depois da implantação, entrei na página do banco.
+Copiei o nome do servidor (servidor-sql-teste.database.windows.net).
+
+No meu SQL Server Management Studio (SSMS) ou Azure Data Studio, conectei usando:
+
+Servidor: servidor-sql-teste.database.windows.net
+
+Usuário: adminsql
+
+Senha: a que defini no cadastro.
+
+Banco de dados: DB-Teste
+
+E pronto, já consegui acessar o banco para criar tabelas e rodar consultas.
