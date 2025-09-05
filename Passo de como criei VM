@@ -1,0 +1,42 @@
+Passo 1 – Entrar no Portal
+
+Primeiro eu acessei o site portal.azure.com
+ e fiz login com minha conta.
+No menu da esquerda, cliquei em “Máquinas Virtuais” e depois em “Criar → Máquina Virtual do Azure”.
+
+Passo 2 – Configurações Básicas
+
+Na tela de criação, preenchi as opções principais:
+
+Assinatura: escolhi a que estava habilitada.
+
+Grupo de recursos: criei um novo chamado RG-Teste (podia também ter usado um já existente).
+
+Nome da VM: escrevi VM-Teste-Azure.
+
+Região: selecionei East US (mas poderia ser a mais próxima da operação).
+
+Imagem: escolhi Ubuntu Server 20.04 LTS.
+
+Tamanho: cliquei em “Ver todos os tamanhos” e selecionei o Standard_B2s, que tem 2 vCPUs e 4GB de RAM.
+
+Passo 3 – Autenticação
+
+Na parte de login, escolhi chave SSH (porque é mais seguro para Linux).
+O portal mesmo gerou uma nova chave para mim, que baixei para usar depois no acesso.
+
+Passo 4 – Configurações de Rede
+
+Aqui o Azure já sugeriu criar uma rede virtual (VNet) e uma sub-rede automaticamente.
+Também configurei para que a VM tivesse um IP público, porque eu queria acessar de fora.
+Na opção de portas de entrada, marquei para liberar a porta 22 (SSH).
+
+Passo 5 – Revisão e Criação
+
+Depois disso, cliquei em “Revisar + Criar”.
+O Azure fez uma checagem das configurações e mostrou que estava tudo certo.
+Cliquei em “Criar” e esperei alguns minutos até que a VM fosse provisionada.
+
+Passo 6 – Acessar a VM
+
+Assim que a implantação terminou, fui até a página da VM e copiei o endereço IP público.
