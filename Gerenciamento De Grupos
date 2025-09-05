@@ -1,0 +1,49 @@
+Passo 1 – Acessar o Portal
+
+Entrei no portal.azure.com
+.
+No menu da esquerda, cliquei em “Grupos de recursos”.
+Na parte superior, cliquei em “Criar”.
+
+Passo 2 – Criar um Grupo de Recursos
+
+Na tela de criação, preenchi os campos:
+
+Assinatura: selecionei a minha assinatura ativa.
+
+Nome do grupo de recursos: digitei RG-Teste-Aplicacao.
+
+Região (local): escolhi Brazil South (poderia ser East US, West Europe, etc).
+
+👉 Importante: o local aqui define onde ficam armazenados os metadados do grupo, não necessariamente os recursos dentro dele. Mas é boa prática escolher a mesma região dos recursos que ele vai agrupar.
+
+Depois cliquei em “Revisar + Criar” e em seguida em “Criar”.
+
+Passo 3 – Visualizar e Gerenciar Grupos
+
+Assim que o grupo foi criado, voltei para a lista de Grupos de recursos.
+Na lista, encontrei o RG-Teste-Aplicacao que acabei de criar.
+Clicando nele, pude:
+
+Ver todos os recursos associados (VMs, bancos, redes, etc).
+
+Usar Tags para classificar (ex: Ambiente=Produção, Departamento=TI).
+
+Mover recursos entre grupos (útil se errar na criação).
+
+Bloquear recursos (ex: impedir exclusão acidental).
+
+Passo 4 – Criar Recursos em um Grupo
+
+Quando fui criar uma máquina virtual e um banco de dados, o Azure me pediu para escolher um Grupo de Recursos.
+Eu selecionei o RG-Teste-Aplicacao e, com isso, todos os recursos ficaram organizados dentro dele.
+
+Passo 5 – Gerenciamento por Local (Regiões do Azure)
+
+No Azure, cada recurso precisa estar associado a um local/região.
+
+Na hora de criar o grupo, escolhi Brazil South.
+
+Na hora de criar a máquina virtual, também escolhi Brazil South → assim tudo ficou concentrado na mesma região, melhorando latência.
+
+Também dá para ter grupos em diferentes regiões se a arquitetura exigir redundância.
