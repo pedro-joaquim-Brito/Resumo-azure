@@ -1,0 +1,74 @@
+Primeiro baixei e instalei o AzCopy:
+
+Fui no site oficial da Microsoft e baixei a versão para Windows (podia ser Linux ou macOS também).
+
+Depois de instalado, confirmei digitando no terminal:
+
+azcopy --version
+
+
+O terminal retornou a versão instalada, confirmando que estava pronto.
+
+Passo 2 – Autenticar no Azure
+
+No terminal, rodei:
+
+azcopy login
+
+
+Isso abriu o navegador, pediu meu login do Azure e, depois que confirmei, o AzCopy ficou autenticado com minha conta.
+
+Passo 3 – Criar um Armazenamento (se ainda não existisse)
+
+No Portal do Azure, criei uma conta de Storage Account chamada storagetesteazcopy, com um container chamado meuarquivos.
+Esse container foi configurado para Blob Storage.
+
+Passo 4 – Copiar Arquivo Local para o Azure
+
+No meu computador tinha um arquivo relatorio.pdf.
+Rodei o comando:
+
+azcopy copy "C:\Users\Pedro\Documents\relatorio.pdf" "https://storagetesteazcopy.blob.core.windows.net/meuarquivos/relatorio.pdf" --recursive=false
+
+
+👉 Esse comando enviou o arquivo local para dentro do container meuarquivos.
+
+Passo 5 – Copiar Pasta Inteira
+
+Se eu quisesse mandar uma pasta inteira, usei o parâmetro --recursive=true:
+
+azcopy copy "C:\Users\Pedro\Documents\Relatorios" "https://storagetesteazcopy.blob.core.windows.net/meuarquivos" --recursive=true
+
+
+Isso fez upload de todos os arquivos dentro da pasta.
+
+Passo 6 – Baixar Arquivo do Azure para Local
+
+Para fazer o contrário (baixar do Azure para minha máquina), usei:
+
+azcopy copy "https://storagetesteazcopy.blob.core.windows.net/meuarquivos/relatorio.pdf" "C:\Users\Pedro\Downloads\" --recursive=false
+
+Passo 7 – Sincronizar Pastas
+
+Se eu queria manter uma pasta local igual à do Azure, usei o sync:
+
+azcopy sync "C:\Users\Pedro\Documents\Relatorios" "https://storagetesteazcopy.blob.core.windows.net/meuarquivos" --recursive=true
+
+
+Esse comando sincronizou só as diferenças (arquivos novos ou alterados).
+
+O que aconteceu no final
+
+Com o AzCopy eu consegui:
+
+Instalar e verificar a ferramenta.
+
+Fazer login com minha conta do Azure.
+
+Criar conta de armazenamento e container (pelo portal).
+
+Copiar arquivos individuais ou pastas inteiras para o Azure.
+
+Baixar arquivos de volta para meu computador.
+
+Sincronizar diretórios locais com containers do Azure Blob.
