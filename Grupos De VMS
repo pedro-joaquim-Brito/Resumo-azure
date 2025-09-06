@@ -1,0 +1,100 @@
+Como Criar um Grupo de Máquinas Virtuais (VM Scale Set) no Azure (via Portal Web)
+Passo 1 – Acessar o Portal
+
+Entrei no portal.azure.com
+.
+No menu da esquerda cliquei em “Criar um recurso”.
+Na busca digitei “Conjunto de Dimensionamento de Máquinas Virtuais” (Virtual Machine Scale Set).
+Cliquei em “Criar”.
+
+Passo 2 – Configurações Básicas
+
+Na aba Básico, preenchi:
+
+Assinatura: escolhi a minha assinatura ativa.
+
+Grupo de recursos: selecionei um já existente (RG-Teste-Aplicacao).
+
+Nome do grupo de VMs: digitei VMSS-Teste-App.
+
+Região: escolhi Brazil South.
+
+Zona de disponibilidade: deixei com redundância em múltiplas zonas (para alta disponibilidade).
+
+Orquestração: escolhi Uniforme (assim todas as VMs têm a mesma configuração).
+
+Passo 3 – Imagem e Tamanho
+
+Imagem do SO: selecionei Ubuntu Server 20.04 LTS.
+
+Tamanho da VM: cliquei em Ver todos e escolhi Standard_B2s (2 vCPUs, 4 GB RAM).
+
+Passo 4 – Autenticação
+
+Marquei a opção Chave SSH pública para acesso.
+
+O portal gerou a chave ou poderia usar uma já existente.
+
+Passo 5 – Rede
+
+Na aba Rede configurei:
+
+Rede virtual (VNet): selecionei uma existente.
+
+Sub-rede: escolhi subnet-app.
+
+Balanceador de carga: habilitei a opção de criar um Load Balancer público automaticamente.
+Isso garante que o tráfego chegue às instâncias do grupo de VMs.
+
+Passo 6 – Dimensionamento Automático
+
+Na aba Dimensionamento, ativei o autoescalonamento.
+Configurei as regras:
+
+Mínimo de instâncias: 2.
+
+Máximo de instâncias: 5.
+
+Escalar quando CPU média ultrapassar 70%.
+
+Reduzir quando CPU média ficar abaixo de 30%.
+
+Assim o grupo de VMs cresce ou diminui conforme a demanda.
+
+Passo 7 – Revisão e Criação
+
+Cliquei em “Revisar + Criar”.
+O Azure validou as configurações e mostrou o resumo.
+Confirmei em “Criar” e esperei alguns minutos até o provisionamento terminar.
+
+Passo 8 – Gerenciamento
+
+Depois que o grupo de VMs foi criado, entrei na página dele e pude:
+
+Ver as instâncias de VM rodando.
+
+Forçar manualmente para aumentar/diminuir a quantidade de instâncias.
+
+Alterar as regras de autoescalonamento.
+
+Ver os logs de saúde e monitoramento de cada VM.
+
+O que aconteceu no final
+
+Resumindo, pela interface eu:
+
+Fui em “Criar recurso” → “Conjunto de Dimensionamento de Máquinas Virtuais”.
+
+Configurei grupo de recursos, nome e região.
+
+Escolhi imagem e tamanho da VM.
+
+Configurei autenticação (SSH).
+
+Criei rede e balanceador de carga.
+
+Configurei escalonamento automático.
+
+Revisei e criei o recurso.
+
+Depois gerenciei as instâncias do grupo via portal.
