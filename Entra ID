@@ -1,0 +1,79 @@
+Passo 1 – Acessar o Portal
+
+Entrei no portal.azure.com
+.
+No menu da esquerda procurei por “Microsoft Entra ID” e cliquei.
+Isso me levou para a página principal do diretório de identidade.
+
+Passo 2 – Criar um Novo Diretório (Tenant)
+
+Na página do Microsoft Entra ID, cliquei em “Gerenciar Locatários” e depois em “Criar”.
+
+O assistente abriu e preenchi:
+
+Tipo de diretório: selecionei Microsoft Entra ID.
+
+Nome da organização: escrevi Empresa-Teste.
+
+Nome de domínio inicial: o Azure gerou algo como empresa-teste.onmicrosoft.com.
+
+Região: escolhi Brazil.
+
+Cliquei em “Revisar + Criar” e depois em “Criar”.
+Após alguns minutos, o novo diretório apareceu na lista de locatários.
+
+Passo 3 – Adicionar Usuários
+
+Dentro do diretório, fui em “Usuários” → “Novo Usuário”.
+Preenchi:
+
+Nome: João Silva.
+
+Nome de usuário: joao.silva@empresa-teste.onmicrosoft.com.
+
+Senha inicial: o sistema gerou uma senha temporária.
+
+O usuário foi criado e já estava pronto para logar com essa conta.
+
+Passo 4 – Criar Grupos
+
+Depois fui em “Grupos” → “Novo Grupo”.
+Escolhi “Segurança” como tipo de grupo.
+Dei o nome Grupo-Financeiro.
+Adicionei o usuário João Silva como membro.
+
+Esse grupo poderia ser usado para aplicar permissões em apps, acesso a recursos ou atribuição de licenças.
+
+Passo 5 – Aplicar Funções (Roles)
+
+Entrei em “Funções e administradores”.
+Escolhi a função Administrador Global e atribuí a um usuário específico (nesse caso, meu usuário principal).
+Assim consegui delegar permissões de administração de identidade.
+
+Passo 6 – Configurar Acesso Condicional (Opcional)
+
+No menu, fui em “Segurança → Acesso Condicional”.
+Criei uma política que exigia MFA (autenticação multifator) quando os usuários acessassem de fora do Brasil.
+Essa política aumentou a segurança de login.
+
+Passo 7 – Integrar com Aplicativos
+
+Ainda no Microsoft Entra ID, cliquei em “Aplicativos empresariais” → “Novo aplicativo”.
+Pude escolher um app SaaS (ex: Salesforce, Office 365, ServiceNow) e configurei o login único (Single Sign-On, SSO).
+Assim, os usuários poderiam acessar com a mesma credencial do Entra ID.
+
+O que aconteceu no final
+
+Resumindo, pela interface eu:
+
+Entrei no Microsoft Entra ID pelo portal.
+
+Criei um novo diretório (tenant) para minha empresa.
+
+Adicionei usuários e grupos.
+
+Configurei funções administrativas.
+
+Ativei políticas de segurança e MFA.
+
+Integrei com aplicativos para login único.
