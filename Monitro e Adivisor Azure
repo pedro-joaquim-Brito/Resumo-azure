@@ -1,0 +1,104 @@
+🔹 Azure Monitor
+O que é
+
+O Azure Monitor é um serviço que coleta, analisa e atua sobre telemetria (dados de desempenho e logs) dos recursos em nuvem e locais.
+Ele ajuda a monitorar a saúde, o desempenho e a disponibilidade das aplicações e infraestrutura.
+
+Principais recursos
+
+Métricas: coleta em tempo real sobre desempenho (CPU, memória, disco etc.).
+
+Logs: análise detalhada de eventos, alertas e auditoria.
+
+Alertas: criação de notificações automáticas baseadas em condições definidas.
+
+Dashboards: visualizações personalizadas para acompanhamento.
+
+Application Insights: monitoramento de desempenho de aplicações.
+
+Como acessar pelo Portal do Azure
+
+Acesse o Portal do Azure.
+
+No menu, procure por “Monitor”.
+
+Dentro do Monitor, escolha entre:
+
+Métricas para acompanhar gráficos.
+
+Logs para analisar registros.
+
+Alertas para criar regras automáticas de notificação.
+
+✅ Útil para detectar falhas, gargalos e acompanhar uso de recursos.
+
+🔹 Azure Advisor
+O que é
+
+O Azure Advisor é um consultor personalizado que analisa recursos implantados e fornece recomendações práticas para otimização.
+Seu foco é melhorar:
+
+Confiabilidade (alta disponibilidade).
+
+Segurança.
+
+Performance.
+
+Custos.
+
+Excelência operacional.
+
+Categorias de recomendações
+
+Alta disponibilidade → garante redundância e resiliência dos serviços.
+
+Segurança → sugere ajustes baseados no Microsoft Defender for Cloud.
+
+Performance → melhora velocidade e capacidade de resposta.
+
+Custos → identifica recursos subutilizados para reduzir despesas.
+
+Excelência operacional → otimiza processos de governança e monitoramento.
+
+Como acessar pelo Portal do Azure
+
+Entre no Portal do Azure.
+
+Pesquise por “Advisor”.
+
+Clique no serviço e aguarde a análise automática.
+
+Veja recomendações divididas por categorias.
+
+Avalie e implemente as sugestões de acordo com as prioridades do negócio.
+
+✅ Ajuda a otimizar continuamente o ambiente de nuvem.
+
+🔹 Exemplo prático integrado
+Cenário
+
+Você administra uma aplicação no Azure composta por VMs, Banco de Dados e Storage.
+
+Azure Monitor:
+
+Configura alertas para uso de CPU acima de 80%.
+
+Analisa logs de erros do banco de dados.
+
+Cria dashboards para acompanhar desempenho em tempo real.
+
+Azure Advisor:
+
+Sugere redimensionar VMs superdimensionadas para reduzir custos.
+
+Recomenda habilitar backup automático no banco de dados.
+
+Indica ativar MFA em contas administrativas para maior segurança.
+
+🔹 Benefícios combinados
+
+Monitor = coleta e visibilidade em tempo real (olho no ambiente).
+
+Advisor = recomendações práticas baseadas em boas práticas (consultoria inteligente).
+
+👉 Juntos, fornecem monitoramento proativo + otimização contínua, garantindo eficiência, segurança e economia no Azure.
