@@ -1,0 +1,105 @@
+🔹 Usando Azure PowerShell
+Pré-requisito
+
+Instalar o Azure PowerShell (Az module).
+
+Conectar-se à conta:
+
+Connect-AzAccount
+
+🔒 Criar um Bloqueio
+
+Exemplo: Bloqueio do tipo Delete em uma máquina virtual.
+
+New-AzResourceLock `
+  -LockName "BloqueioVM" `
+  -LockLevel CanNotDelete `
+  -ResourceName "MinhaVM" `
+  -ResourceType "Microsoft.Compute/virtualMachines" `
+  -ResourceGroupName "MeuGrupoRecursos"
+
+
+CanNotDelete → bloqueia exclusão.
+
+ReadOnly → bloqueia alterações e exclusões.
+
+🏷️ Adicionar Tags a um Recurso
+
+Exemplo: Adicionar tags a uma VM.
+
+Set-AzResource `
+  -ResourceGroupName "MeuGrupoRecursos" `
+  -ResourceName "MinhaVM" `
+  -ResourceType "Microsoft.Compute/virtualMachines" `
+  -Tag @{ "Ambiente"="Produção"; "Projeto"="Financeiro"; "Responsável"="EquipeInfra" } `
+  -Force
+
+📌 Verificar Tags de um Recurso
+(Get-AzResource -ResourceName "MinhaVM").Tags
+
+🔹 Usando Azure CLI
+Pré-requisito
+
+Instalar o Azure CLI.
+
+Conectar-se à conta:
+
+az login
+
+🔒 Criar um Bloqueio
+
+Exemplo: Bloqueio do tipo ReadOnly em uma máquina virtual.
+
+az lock create \
+  --name BloqueioVM \
+  --lock-type ReadOnly \
+  --resource-group MeuGrupoRecursos \
+  --resource-name MinhaVM \
+  --resource-type "Microsoft.Compute/virtualMachines"
+
+🏷️ Adicionar Tags a um Recurso
+
+Exemplo: Adicionar tags a uma VM.
+
+az resource tag \
+  --resource-group MeuGrupoRecursos \
+  --name MinhaVM \
+  --resource-type "Microsoft.Compute/virtualMachines" \
+  --tags Ambiente=Produção Projeto=Financeiro Responsável=EquipeInfra
+
+📌 Verificar Tags de um Recurso
+az resource show \
+  --resource-group MeuGrupoRecursos \
+  --name MinhaVM \
+  --resource-type "Microsoft.Compute/virtualMachines" \
+  --query tags
+
+🔹 Exemplo prático consolidado
+
+Criar uma VM chamada MinhaVM no grupo MeuGrupoRecursos.
+
+Adicionar um bloqueio CanNotDelete.
+
+Aplicar tags:
+
+Ambiente=Produção
+
+Projeto=Financeiro
+
+Responsável=EquipeInfra
+
+No PowerShell:
+
+New-AzResourceLock -LockName "BloqueioVM" -LockLevel CanNotDelete -ResourceName "MinhaVM" -ResourceType "Microsoft.Compute/virtualMachines" -ResourceGroupName "MeuGrupoRecursos"
+
+Set-AzResource -ResourceGroupName "MeuGrupoRecursos" -ResourceName "MinhaVM" -ResourceType "Microsoft.Compute/virtualMachines" -Tag @{ "Ambiente"="Produção"; "Projeto"="Financeiro"; "Responsável"="EquipeInfra" } -Force
+
+
+No Azure CLI:
+
+az lock create --name BloqueioVM --lock-type CanNotDelete --resource-group MeuGrupoRecursos --resource-name MinhaVM --resource-type "Microsoft.Compute/virtualMachines"
+
+az resource tag --resource-group MeuGrupoRecursos --name MinhaVM --resource-type "Microsoft.Compute/virtualMachines" --tags Ambiente=Produção Projeto=Financeiro Responsável=EquipeInfra
+
+
+👉 Assim, com CLI ou PowerShell, você garante que a VM não pode ser excluída e ainda organiza os recursos com tags para relatórios e governança.
