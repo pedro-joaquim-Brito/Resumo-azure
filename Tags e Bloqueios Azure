@@ -1,0 +1,92 @@
+Os bloqueios no Azure são usados para proteger recursos críticos contra exclusões ou modificações acidentais. Eles podem ser aplicados em diferentes níveis:
+
+Assinatura
+
+Grupo de Recursos
+
+Recurso individual
+
+Tipos de bloqueio
+
+Delete (Excluir): impede que o recurso seja excluído.
+
+ReadOnly (Somente leitura): impede alterações no recurso, permitindo apenas consultas.
+
+Como configurar um bloqueio pelo Portal do Azure
+
+Acesse o Portal do Azure (https://portal.azure.com
+).
+
+Vá até o recurso, grupo de recursos ou assinatura que deseja proteger.
+
+No menu lateral, clique em “Bloqueios” (Locks).
+
+Clique em Adicionar.
+
+Defina:
+
+Nome do bloqueio
+
+Tipo: Delete ou ReadOnly
+
+Descrição (opcional)
+
+Clique em OK para salvar.
+
+✅ Agora o recurso estará protegido de acordo com o tipo de bloqueio definido.
+
+🔹 Tags
+O que são
+
+As tags no Azure são pares chave=valor usados para organizar, classificar e gerenciar recursos.
+Exemplo:
+
+Ambiente=Produção
+
+Projeto=ERP
+
+Responsável=EquipeTI
+
+Benefícios
+
+Organização dos recursos em grandes ambientes.
+
+Facilita relatórios de custo por projeto ou centro de custo.
+
+Apoia políticas de governança usando Azure Policy.
+
+Como configurar tags pelo Portal do Azure
+
+Acesse o Portal do Azure.
+
+Abra o recurso ou grupo de recursos que deseja organizar.
+
+No menu lateral, clique em “Tags”.
+
+Clique em Adicionar.
+
+Informe:
+
+Chave (ex.: Ambiente, Projeto, Responsável)
+
+Valor (ex.: Produção, ERP, EquipeTI)
+
+Clique em Salvar.
+
+✅ As tags ficam visíveis no recurso e podem ser usadas em relatórios e filtros.
+
+🔹 Exemplo prático
+
+Você tem uma Máquina Virtual de Produção.
+
+Adiciona um bloqueio do tipo Delete para evitar exclusão acidental.
+
+Aplica tags como:
+
+Ambiente=Produção
+
+Projeto=Financeiro
+
+Responsável=Infraestrutura
+
+🔒 Assim, a VM está protegida contra exclusão e organizada para relatórios de custo e governança.
