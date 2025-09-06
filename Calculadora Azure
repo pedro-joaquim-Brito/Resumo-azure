@@ -1,0 +1,74 @@
+1. Acessar a ferramenta
+
+Vá até o site oficial: Azure Pricing Calculator
+.
+
+A página inicial exibe uma lista de serviços do Azure que podem ser adicionados à estimativa.
+
+2. Selecionar os serviços desejados
+
+Clique em “Produtos” e escolha os recursos que deseja calcular, como:
+
+Máquinas Virtuais
+
+Banco de Dados SQL
+
+Blob Storage
+
+Redes Virtuais
+
+Cada serviço selecionado aparecerá em uma lista na parte inferior da página.
+
+3. Configurar os recursos
+
+Para cada item adicionado, configure os detalhes:
+
+Região (ex.: Brasil Sul, Leste dos EUA).
+
+Tipo/tamanho do recurso (ex.: VM Standard_D2s_v3).
+
+Horas de uso (24h/dia, 12h/dia etc.).
+
+Sistema operacional (Linux/Windows, no caso de VMs).
+
+Opções de redundância (no caso de storage).
+
+A calculadora ajusta automaticamente o preço de acordo com as escolhas.
+
+4. Visualizar o custo estimado
+
+Conforme as configurações, o custo mensal aparece atualizado.
+
+Você pode adicionar vários recursos e ver o custo total consolidado do ambiente.
+
+5. Salvar ou compartilhar a estimativa
+
+As estimativas podem ser:
+
+Exportadas em Excel para relatórios e comparações.
+
+Compartilhadas por link com colegas de equipe.
+
+Salvas no portal do Azure (se estiver logado com sua conta).
+
+ Exemplo
+
+Suponha que você precise de:
+
+2 Máquinas Virtuais Standard_D2s_v3 (Windows, 24h/dia).
+
+1 Azure SQL Database na camada Standard.
+
+500 GB de Blob Storage com redundância LRS.
+
+👉 Ao configurar esses itens na calculadora, o sistema exibirá o custo mensal total aproximado, ajudando no planejamento financeiro.
+
+🔹 Benefícios da calculadora
+
+Transparência de custos: evita surpresas na fatura.
+
+Simulação de cenários: permite comparar diferentes configurações.
+
+Apoio a orçamentos: útil para equipes de TI e financeiro.
+
+Planejamento estratégico: essencial para dimensionar soluções de forma eficiente.
